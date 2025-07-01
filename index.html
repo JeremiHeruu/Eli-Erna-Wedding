@@ -459,6 +459,17 @@
   });
 </script>
 
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const recipientName = params.get('to');
+    
+    if (recipientName) {
+        document.querySelectorAll('#recipient-name').forEach(element => {
+            element.textContent = decodeURIComponent(recipientName);
+        });
+    }
+  </script>
+
 
 
 
